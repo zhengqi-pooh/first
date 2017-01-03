@@ -1,0 +1,151 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-12-22 16:29:12
+ * @version $Id$
+ */
+html,body,.swiper-slide{width: 100%;height:100%; }
+body{font-size: .12rem; overflow-x: hidden; background-color: #000;  margin: 0 auto; }
+.swiper-container{width: 100%;height:100%;max-width: 7.5rem;margin:0 auto; background-image: url(../images/1.jpg);background-repeat: no-repeat;-webkit-transition: background-image 1.2s;background-size:100% 100%;}
+/*.swiper-wrapper{ display: none; }
+.swiper-slide{background: none!important;}*/
+.abs{ position: absolute;}
+.w100{ width: 100%; height:100%; }
+/*从开头到结尾以相同的速度来播放动画：*/
+#s1 .ani{ -webkit-animation-timing-function: cubic-bezier(0.07, 0.32, 0.06, 0.99);}
+/*音乐播放器*/
+.bgm-btn{ position:absolute; top: 2%; right:2%; width: 30px; height: 30px; background-size: 100%; background-image: url("../images/music.png"); z-index: 1; -webkit-animation: myrotate 5s linear 0s infinite normal;}
+.bgm-btn.mut{ background-position: 0px -30px; -webkit-animation: none;}
+
+@-webkit-keyframes myrotate /*Safari and Chrome*/
+{
+0% { -webkit-transform:rotate(0deg);}
+25% { -webkit-transform:rotate(-90deg);}  
+50% { -webkit-transform:rotate(-180deg);}
+75% { -webkit-transform:rotate(-270deg);}
+100% { -webkit-transform:rotate(-360deg);}
+}
+
+/* 树叶飘动特效 */
+.leaf{
+  animation: tr-lb linear 8s;
+  animation-iteration-count: infinite; 
+  animation-timing-function: ease; 
+  transform-origin: 50% 50%;
+  -webkit-animation: tr-lb linear 8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease; 
+  -webkit-transform-origin: 50% 50%;
+}
+.leaf1{top: -10%; left: 55%; -webkit-animation-delay: 0s;    -webkit-animation-duration: 8s; }
+.leaf2{top: -5%; left: 89%; -webkit-animation-delay: 3s;    -webkit-animation-duration: 5.3s; }
+.leaf3{top: 40%; left: 99%; -webkit-animation-delay: 2.4s;  -webkit-animation-duration: 9.7s; }
+@keyframes tr-lb{
+  0% {    transform:  translate(0,0) rotate(0);   }
+  100% {    transform:  translate(-7rem,6.1rem) rotate(500deg) ;  }
+}
+.topLeafBox {top: 0;  right: 0;  left: auto;  background: url("http://jiangsu.sinaimg.cn/zt/s/yxqxwspds/mobile/images/topLeaf.png") no-repeat;  background-size: 100%;  width:100%;  height: 1.88rem;  position: absolute;}
+.topLeaf{position: absolute; top: -.2rem; display: block;animation: topLeafYoyo ease-in-out 4s;animation-direction:alternate;animation-iteration-count: infinite; transform-origin: 50% 50%;-webkit-animation: topLeafYoyo ease-in-out 4s;-webkit-animation-direction:alternate;-webkit-animation-iteration-count: infinite;-webkit-transform-origin: 50% 50%;}
+.topLeaf1{left: 33%;  -webkit-transform-origin: top center; }
+.topLeaf2{left: 86%; top: -.15rem; -webkit-transform-origin: top right;  -webkit-animation-delay: 1.2s;    -webkit-animation-duration: 5.7s; }
+
+@keyframes topLeafYoyo{
+  0% {    transform:   rotate(-5deg);   }
+  100% {    transform:   rotate(5deg) ;  }
+}
+
+/*小王子*/
+.s6View{   width: 100%;  height: 100%;  position: relative;  overflow-y: auto; -webkit-overflow-scrolling: touch; }
+* 作品列表 */
+.card-itemBox {
+  padding: 0.4em 1.2em;
+}
+
+.card-item {
+  background-color: #F9F5EF;
+  color: #323232;
+  padding: 0 0.6em;
+  position: relative;
+  box-shadow: 0 2px 7px -1px rgba(0, 0, 0, 0.38);
+}
+
+.work-descBox {
+  font-size: 14px;
+  line-height: 2;
+  font-weight: bold;
+  border-bottom: 1px solid #CBCBCB;
+}
+
+.work-textBox {
+  text-indent: 2em;
+  padding: 0.4em 0;
+}
+
+.work-voteBtnBox {
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  background-color: #F4EDDC;
+  height: 3em;
+  vertical-align: middle;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.22);
+} 
+
+.work-name {
+  float: left;
+  line-height: 36px;
+  color: #424242;
+  padding-left: 0.6em;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+}
+.work-name:BEFORE {
+
+}
+
+.work-voteBtn {
+  width: 80px;
+  padding: 0.4em 0;
+  outline: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: #FF4400;
+  color: #FFF;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s;
+  margin: 6px 0 0;
+  box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.56);
+  position: absolute;
+  right: 14px;
+  line-height: 13px;
+  height: 24px;
+}
+.work-voteBtn:HOVER{ box-shadow: 1px 1px 4px rgba(174, 49, 52, 0.7); }
+.work-voteBtn:ACTIVE{ background-color: #ff4400; }
+.work-voteBtnBox {
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  background-color: #F4EDDC;
+  height: 3em;
+  vertical-align: middle;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.22);
+}
+
+.work-votecountBox {
+  text-align: right;
+  position: absolute;
+  bottom: 22px;
+  right: 5px;
+}
+.work-votecount {
+  background-color: #FDA400;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 11px;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.31);
+}
